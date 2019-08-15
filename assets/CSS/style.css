@@ -1,0 +1,37 @@
+body {
+    background-image: url("https://i.pinimg.com/originals/c3/97/77/c397773bfdbe6913d7953e33df4da9ee.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#weatherDiv {
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    height: 200px;
+    margin: 30px auto;
+}
+
+#button {
+    margin-left: 46%;
+    margin-right: 45%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#motivation {
+    width: 300px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    margin: 0 auto 40px;
+    color: black;
+    background: rgb(211,211,211, 0.6);
+}
+
+#header {
+    background: rgb(211,211,211, 0.6)!important;
+    border-bottom: 1px solid lightgray;
+    
+}
+
