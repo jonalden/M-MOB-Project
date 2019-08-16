@@ -6,3 +6,8 @@ console.log(weatherURL);
 const youtubeURL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=AIzaSyDdiDag5VDc4sK59dOis6ozkyTndH0gUNc"
 console.log(youtubeURL);
 
+
+
+axios.get(weatherURL).then(response => console.log(response));
+
+axios.get(youtubeURL).then(response => console.log(response));
