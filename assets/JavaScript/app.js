@@ -13,21 +13,29 @@ document.getElementById("button").addEventListener("click", function () {
     const youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=" + youtubeKey;
     console.log(youtubeURL);
 
+
+
+// body content with tables//
+
     axios.get(weatherURL).then(function (response) {
-        console.log(response);
+        console.log(response.data   );
 
-      
 
-            weatherDiv = document.createElement("div");
-            weatherDiv.classList.add("weatherDisplay");
+        document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
+        document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
 
-            let weatherData = response.data.weather[0].icon + "<br>" + response.data.base;
-            console.log
+        //     weatherDiv = document.createElement("div");
+        //     weatherDiv.classList.add("weatherDisplay");
 
-            weatherDiv.innerHTML = weatherData;
+        //     console.log
 
-           document.getElementById("weatherDiv").append(weatherDiv);
+        //     weatherDiv.innerHTML = weatherData;
+
+        //    document.getElementById("weatherTable").append(weatherDiv);
     })
+
+
+    // Video/Audio//
 
     axios.get(youtubeURL).then(function (response) {
         console.log(response);
@@ -35,13 +43,41 @@ document.getElementById("button").addEventListener("click", function () {
         youtubeDiv = document.createElement("div");
             youtubeDiv.classList.add("youtubeDisplay");
 
-            let youtubeData = response.config.url + "<br>" + response.data.base;
+            let youtubeData = response.config.url + response.data.base;
             console.log
 
             youtubeDiv.innerHTML = youtubeData;
 
-           document.getElementById("youtubeDiv").append(youtubeDiv);
+           document.getElementById("youTubeTable").append(youtubeDiv);
     })
+
+
+    // Beet Content Info
+
+    axios.get(beerURL).then(function (response) {
+        console.log(response);
+
+        beerDiv = document.createElement("div");
+            beerDiv.classList.add("beerDisplay");
+
+            let youtubeData = response.config.url + "<br>" + response.data.base;
+            console.log
+
+            beerDiv.innerHTML = youtubeData;
+
+           document.getElementById("beerTable").append(beerDiv);
+    })
+
+
+
+
+
+
+
+
+
+
+
     // create an array to hold object from API Url
     // create function to create HTML div dynamically
     // create a for loop to loop through array objects

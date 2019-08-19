@@ -45,3 +45,42 @@ h1 {
     color: whitesmoke;
 }
 
+
+.weather {
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: aliceblue;
+}
+
+
+
+/* Table1/video */
+
+.table {
+    background: rgb(211,211,211, 0.6)!important;
+    margin-bottom: 100px;
+}
+
+/* Table2/video */
+
+.table2 {
+    background: rgb(211,211,211, 0.6)!important;
+    margin-bottom: 100px;
+}
+
+
+/* Table3/Brewery */
+
+.table3 {
+    background: rgb(211,211,211, 0.6)!important;
+    margin-bottom: 100px;
+}
+
+
+
+/* footer */
+.card {
+    background: rgb(211,211,211, 0.6)!important;
+    border-bottom: 1px solid lightgray;
+}
