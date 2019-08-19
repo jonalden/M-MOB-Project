@@ -1,5 +1,6 @@
 const youtubeKey = "AIzaSyDdiDag5VDc4sK59dOis6ozkyTndH0gUNc"
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
+const deezerKey = " d7e2c32e4e20a97cf3752a20536bd754"
 
 // add onclick function to submit button
 
@@ -9,7 +10,7 @@ document.getElementById("button").addEventListener("click", function () {
 
     const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
     console.log(weatherURL);
-    const youtubeURL = "https://www.googleapis.com/youtube/v3/search?&part=snippet&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=" + youtubeKey;
+    const youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=" + youtubeKey;
     console.log(youtubeURL);
 
     axios.get(weatherURL).then(function (response) {
@@ -32,9 +33,9 @@ document.getElementById("button").addEventListener("click", function () {
         console.log(response);
 
         youtubeDiv = document.createElement("div");
-            yuotubeDiv.classList.add("youtubeDisplay");
+            youtubeDiv.classList.add("youtubeDisplay");
 
-            let youtubeData = response.data.weather[0].icon + "<br>" + response.data.base;
+            let youtubeData = response.config.url + "<br>" + response.data.base;
             console.log
 
             youtubeDiv.innerHTML = youtubeData;
