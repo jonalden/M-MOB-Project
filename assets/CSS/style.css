@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
     font-family: 'Lexend Mega', sans-serif;
     /* background: rgba(255, 255, 255, 0.3); */
-    /* opacity: 0.2; */
+    opacity: 0.2;
 }
 
 #weatherDiv, #youtubeDiv, #beerDiv {
