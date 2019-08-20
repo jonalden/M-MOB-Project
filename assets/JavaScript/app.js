@@ -1,49 +1,50 @@
-const youtubeKey = "AIzaSyDdiDag5VDc4sK59dOis6ozkyTndH0gUNc"
+
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
-const deezerKey = " d7e2c32e4e20a97cf3752a20536bd754"
+const napsterKey = "MjMxMDBhNjktY2YzNS00MTQwLWJjMTUtZGJmMmE0NjY3ODhi"
 
 // add onclick function to submit button
 
 document.getElementById("button").addEventListener("click", function () {
 
+    // grabbing the user input from the form
     let city = document.getElementById("userInput").value.trim();
 
+    //variable containing the Open Weather URL
     const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
     console.log(weatherURL);
-    const youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=" + youtubeKey;
-    console.log(youtubeURL);
+    
+    //variable containing the Napster URL
+    const napsterURL = "https://api.napster.com/v2.1/tracks/top?apikey=" + napsterKey;
+    console.log(napsterURL);
 
+    // Get function using Axios to call the response of Open Weather
     axios.get(weatherURL).then(function (response) {
         console.log(response);
 
-      
+        weatherDiv = document.createElement("div");
+        weatherDiv.classList.add("weatherDisplay");
 
-            weatherDiv = document.createElement("div");
-            weatherDiv.classList.add("weatherDisplay");
+        let weatherData = response.data.weather[0].icon + "<br>" + response.data.base;
+        console.log
 
-            let weatherData = response.data.weather[0].icon + "<br>" + response.data.base;
-            console.log
+        weatherDiv.innerHTML = weatherData;
 
-            weatherDiv.innerHTML = weatherData;
-
-           document.getElementById("weatherDiv").append(weatherDiv);
+        document.getElementById("weatherDiv").append(weatherDiv);
     })
 
-    axios.get(youtubeURL).then(function (response) {
+    // Get function using Axios to call the response of Napster
+    axios.get(napsterURL).then(function (response) {
         console.log(response);
 
-        youtubeDiv = document.createElement("div");
-            youtubeDiv.classList.add("youtubeDisplay");
+        napsterDiv = document.createElement("div");
+        napsterDiv.classList.add("youtubeDisplay");
 
-            let youtubeData = response.config.url + "<br>" + response.data.base;
-            console.log
+        let napsterData = response.data.tracks[0].previewURL;
+        console.log
 
-            youtubeDiv.innerHTML = youtubeData;
+        napsterDiv.innerHTML = napsterData;
 
-           document.getElementById("youtubeDiv").append(youtubeDiv);
+        document.getElementById("beerDiv").append(napsterDiv);
     })
-    // create an array to hold object from API Url
-    // create function to create HTML div dynamically
-    // create a for loop to loop through array objects
-    // populate div with array[i] 
+    
 })
