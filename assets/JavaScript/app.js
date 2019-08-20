@@ -2,10 +2,19 @@ const youtubeKey = "AIzaSyDdiDag5VDc4sK59dOis6ozkyTndH0gUNc"
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
 const deezerKey = " d7e2c32e4e20a97cf3752a20536bd754"
 
-// add onclick function to submit button
+// add onclick and enter key function to submit button
+const input = document.getElementById("userInput");
+    input.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+        event.preventDefault()
+        document.getElementById("button").click()
+       }
+       console.log (event.keyCode)
+    })
 
 document.getElementById("button").addEventListener("click", function () {
 
+    event.preventDefault()
     let city = document.getElementById("userInput").value.trim();
 
     const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
@@ -51,6 +60,7 @@ document.getElementById("button").addEventListener("click", function () {
            document.getElementById("youTubeTable").append(youtubeDiv);
     })
 
+<<<<<<< HEAD
 
     // Beet Content Info
 
@@ -78,8 +88,10 @@ document.getElementById("button").addEventListener("click", function () {
 
 
 
+=======
+>>>>>>> 41606d4b9b1526291d9ff7bb64718f4f461ea409
     // create an array to hold object from API Url
     // create function to create HTML div dynamically
     // create a for loop to loop through array objects
     // populate div with array[i] 
-})
+});
