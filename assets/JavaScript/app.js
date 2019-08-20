@@ -2,6 +2,8 @@
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
 const napsterKey = "MjMxMDBhNjktY2YzNS00MTQwLWJjMTUtZGJmMmE0NjY3ODhi"
 
+const songsArray = [];
+
 // add onclick and enter key function to submit button
 const input = document.getElementById("userInput");
     input.addEventListener("keydown", function(event) {
@@ -46,14 +48,19 @@ document.getElementById("button").addEventListener("click", function (event) {
         console.log(response);
 
         napsterDiv = document.createElement("div");
-        napsterDiv.classList.add("youtubeDisplay");
+        napsterDiv.classList.add("napsterDisplay");
 
         let napsterData = response.data.tracks[0].previewURL;
         console.log
 
         napsterDiv.innerHTML = napsterData;
 
-        document.getElementById("beerDiv").append(napsterDiv);
+         for ( i = 0; i < response.data.tracks; i++) {
+            console.log("hello" + response.data.tracks);
+            
+         }
+
+        document.getElementById("napsterDiv").append(napsterDiv);
     })
     
 })

@@ -6,7 +6,7 @@ body {
     font-family: 'Lexend Mega', sans-serif;
 }
 
-#weatherDiv, #youtubeDiv, #beerDiv {
+#weatherDiv, #napsterDiv {
     border: 1px solid white;
     border-radius: 8px;
     height: 200px;
@@ -34,7 +34,6 @@ h1 {
     background: rgb(211,211,211, 0.4)!important;
     padding: 20px !important;
     text-align: center;
-    
 }
 
 #userInput {
@@ -48,7 +47,7 @@ h1 {
     color: whitesmoke;
 }
 
-.weatherDisplay, .youtubeDisplay {
+.weatherDisplay, .napsterDisplay {
     color: white;
 }
 
