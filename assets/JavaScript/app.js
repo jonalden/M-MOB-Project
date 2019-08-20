@@ -2,11 +2,20 @@
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
 const napsterKey = "MjMxMDBhNjktY2YzNS00MTQwLWJjMTUtZGJmMmE0NjY3ODhi"
 
-// add onclick function to submit button
+// add onclick and enter key function to submit button
+const input = document.getElementById("userInput");
+    input.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+        event.preventDefault()
+        document.getElementById("button").click()
+       }
+       console.log (event.keyCode)
+    })
 
-document.getElementById("button").addEventListener("click", function () {
+document.getElementById("button").addEventListener("click", function (event) {
 
     // grabbing the user input from the form
+    event.preventDefault()
     let city = document.getElementById("userInput").value.trim();
 
     //variable containing the Open Weather URL
