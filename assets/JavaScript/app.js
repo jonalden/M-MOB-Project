@@ -2,17 +2,15 @@
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
 const napsterKey = "MjMxMDBhNjktY2YzNS00MTQwLWJjMTUtZGJmMmE0NjY3ODhi"
 
-const songsArray = [];
 
 // add onclick and enter key function to submit button
 const input = document.getElementById("userInput");
-    input.addEventListener("keydown", function(event) {
-        if (event.keyCode === 13) {
+input.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
         event.preventDefault()
         document.getElementById("button").click()
-       }
-       console.log (event.keyCode)
-    })
+    }
+})
 
 document.getElementById("button").addEventListener("click", function (event) {
 
@@ -23,9 +21,9 @@ document.getElementById("button").addEventListener("click", function (event) {
     //variable containing the Open Weather URL
     const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
     console.log(weatherURL);
-    
+
     //variable containing the Napster URL
-    const napsterURL = "https://api.napster.com/v2.1/tracks/top?apikey=" + napsterKey;
+    const napsterURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" + napsterKey + "&limit=9";
     console.log(napsterURL);
 
     // Get function using Axios to call the response of Open Weather
@@ -50,17 +48,19 @@ document.getElementById("button").addEventListener("click", function (event) {
         napsterDiv = document.createElement("div");
         napsterDiv.classList.add("napsterDisplay");
 
-        let napsterData = response.data.tracks[0].previewURL;
-        console.log
-
+        let napsterData = response.data.tracks;
+        
         napsterDiv.innerHTML = napsterData;
+        
+        for (i = 0; i < napsterData.length; i++) {
+            let myUrl = napsterData[i].previewURL;
 
-         for ( i = 0; i < response.data.tracks; i++) {
-            console.log("hello" + response.data.tracks);
-            
-         }
-
-        document.getElementById("napsterDiv").append(napsterDiv);
+            let html = "<audio controls><source class='audioSource' src=" + myUrl + "></audio>"
+            document.getElementById("napsterDiv").innerHTML += html;
+        }
+        
     })
     
 })
+
+
