@@ -1,68 +1,91 @@
-const youtubeKey = "AIzaSyDdiDag5VDc4sK59dOis6ozkyTndH0gUNc"
+
 const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
-const deezerKey = " d7e2c32e4e20a97cf3752a20536bd754"
+const napsterKey = "MjMxMDBhNjktY2YzNS00MTQwLWJjMTUtZGJmMmE0NjY3ODhi"
+
 
 // add onclick and enter key function to submit button
 const input = document.getElementById("userInput");
-    input.addEventListener("keydown", function(event) {
-        if (event.keyCode === 13) {
+input.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
         event.preventDefault()
         document.getElementById("button").click()
-       }
-       console.log (event.keyCode)
-    })
+    }
+})
 
-document.getElementById("button").addEventListener("click", function () {
+document.getElementById("button").addEventListener("click", function (event) {
 
+    // grabbing the user input from the form
     event.preventDefault()
     let city = document.getElementById("userInput").value.trim();
 
+    //variable containing the Open Weather URL
     const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
     console.log(weatherURL);
-    const youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&order=rating&type=video&videoDefinition=high&videoEmbeddable=true&key=" + youtubeKey;
-    console.log(youtubeURL);
 
 
+    //variable containing the Napster URL
+    const napsterURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" + napsterKey + "&limit=9";
+    console.log(napsterURL);
 
-// body content with tables//
+    // Get function using Axios to call the response of Open Weather
 
     axios.get(weatherURL).then(function (response) {
         console.log(response.data   );
 
 
-        document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
-        document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
+        weatherDiv = document.createElement("div");
+        weatherDiv.classList.add("weatherDisplay");
 
-        //     weatherDiv = document.createElement("div");
-        //     weatherDiv.classList.add("weatherDisplay");
+        let weatherData = response.data.weather[0].icon + "<br>" + response.data.base;
+        console.log
 
-        //     console.log
+        weatherDiv.innerHTML = weatherData;
 
-        //     weatherDiv.innerHTML = weatherData;
-
-        //    document.getElementById("weatherTable").append(weatherDiv);
+        document.getElementById("weatherDiv").append(weatherDiv);
     })
 
-
-    // Video/Audio//
-
-    axios.get(youtubeURL).then(function (response) {
+    // Get function using Axios to call the response of Napster
+    axios.get(napsterURL).then(function (response) {
         console.log(response);
 
-        youtubeDiv = document.createElement("div");
-            youtubeDiv.classList.add("youtubeDisplay");
+        napsterDiv = document.createElement("div");
+        napsterDiv.classList.add("napsterDisplay");
+      
+      let napsterData = response.data.tracks;
+        
+        napsterDiv.innerHTML = napsterData;
+        
+        for (i = 0; i < napsterData.length; i++) {
+            let myUrl = napsterData[i].previewURL;
 
-            let youtubeData = response.config.url + response.data.base;
-            console.log
 
-            youtubeDiv.innerHTML = youtubeData;
 
-           document.getElementById("youTubeTable").append(youtubeDiv);
+//         document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
+//         document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
+
+//         //     weatherDiv = document.createElement("div");
+//         //     weatherDiv.classList.add("weatherDisplay");
+
+//         //     console.log
+
+//         //     weatherDiv.innerHTML = weatherData;
+
+//         //    document.getElementById("weatherTable").append(weatherDiv);
+//     })
+
+
+        
+
+            let html = "<audio controls><source class='audioSource' src=" + myUrl + "></audio>"
+            document.getElementById("napsterDiv").innerHTML += html;
+        }
+        
+         
     })
 
-<<<<<<< HEAD
 
-    // Beet Content Info
+
+    // Beer Content Info
 
     axios.get(beerURL).then(function (response) {
         console.log(response);
@@ -76,7 +99,10 @@ document.getElementById("button").addEventListener("click", function () {
             beerDiv.innerHTML = youtubeData;
 
            document.getElementById("beerTable").append(beerDiv);
+
     })
+    
+})
 
 
 
@@ -88,10 +114,4 @@ document.getElementById("button").addEventListener("click", function () {
 
 
 
-=======
->>>>>>> 41606d4b9b1526291d9ff7bb64718f4f461ea409
-    // create an array to hold object from API Url
-    // create function to create HTML div dynamically
-    // create a for loop to loop through array objects
-    // populate div with array[i] 
-});
+
