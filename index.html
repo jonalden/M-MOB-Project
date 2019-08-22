@@ -1,5 +1,7 @@
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,10 +13,10 @@
 
     <link rel="stylesheet" href="assets/CSS/style.css">
     <title>Running App</title>
+
 </head>
 
 <body>
-
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
@@ -69,13 +71,64 @@
 
     <!-- div for displaying the music player -->
     <div class="container" id="napsterDiv">
-            <!-- <audio controls>
-                    <source src="horse.ogg" type="audio/ogg">
-                    <source id="musicSource" src="http://listen.vo.llnwd.net/g3/0/4/7/9/7/1471379740.mp3" type="audio/mpeg">
-                  </audio> -->
+    </div>
+
+    <!-- First table for weather cast -->
+    <div class="container" id="weatherDiv">
+        <table class="table" id="weatherTable">
+            <thead>
+                <tr>
+                    <h1 scope="tableTitle1">Todays Weather Cast</h1>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <th id="weather">Weather Info goes here</th>
+                </tr>
+                <tr>
+                    <th scope="row"></th>
+                    <th id="weatherDescription">Weather Image</th>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
 
+    <!-- Third table for resturant/brewery -->
+    <div class="container" id="beerDiv">
+        <table class="table3" id="beerTable">
+            <thead>
+                <tr>
+                    <th scope="col">Best Brewery</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                </tr>
+            </tbody>
+    </div>
+    </table>
+
+    <!-- Footer -->
+    <div class="card">
+        <div class="card-header">
+            Quote
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>
@@ -89,7 +142,3 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="assets/JavaScript/app.js"></script>
-
-</body>
-
-</html>
