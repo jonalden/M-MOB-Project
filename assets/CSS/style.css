@@ -73,6 +73,7 @@ h1 {
     font-size: 18px;
 }
 
+
 .weatherDisplay, .napsterDisplay {
     color: white;
 }
@@ -101,16 +102,35 @@ h1 {
     color: aliceblue;
 }
 
+<<<<<<< HEAD
 /* Table1/video */
 
 .table {
     background: rgb(211, 211, 211, 0.6)!important;
+=======
+
+
+.weather {
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-right: 200px;
+    color: aliceblue;
+}
+
+
+
+/* Table1/video */
+
+.table {
+    background: rgb(211,211,211, 0.6)!important;
+>>>>>>> 07962eb7ea9354763a3f2c5206148c22ea7a7098
     margin-bottom: 100px;
 }
 
 /* Table2/video */
 
 .table2 {
+<<<<<<< HEAD
     background: rgb(211, 211, 211, 0.6)!important;
     margin-bottom: 100px;
 }
@@ -128,3 +148,25 @@ h1 {
     background: rgb(211, 211, 211, 0.6)!important;
     border-bottom: 1px solid lightgray;
 }
+=======
+    background: rgb(211,211,211, 0.6)!important;
+    margin-bottom: 100px;
+}
+
+
+/* Table3/Brewery */
+
+.table3 {
+    background: rgb(211,211,211, 0.6)!important;
+    margin-bottom: 100px;
+}
+
+
+
+/* footer */
+.card {
+    background: rgb(211,211,211, 0.6)!important;
+    border-bottom: 1px solid lightgray;
+}
+
+>>>>>>> 07962eb7ea9354763a3f2c5206148c22ea7a7098
