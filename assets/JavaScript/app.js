@@ -27,11 +27,7 @@ document.getElementById("button").addEventListener("click", function (event) {
     const napsterSongURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" + napsterKey + "&limit=9";
     console.log(napsterSongURL);
 
-    const napsterImageURL = "https://api.napster.com/imageserver/v2/playlists/pp.188152066/artists/images/230x153.jpg?apikey=" + napsterKey + "&limit=9";
-    console.log(napsterImageURL);
-
     // Get function using Axios to call the response of Open Weather
-
     axios.get(weatherURL).then(function (response) {
         console.log(response.data);
 
@@ -50,48 +46,33 @@ document.getElementById("button").addEventListener("click", function (event) {
     axios.get(napsterSongURL).then(function (response) {
         console.log(response);
 
-        //creating a div for Napster and assigning it a class
-        napsterDiv = document.createElement("div");
-        napsterDiv.classList.add("napsterDisplay");
+
 
         //grabbing songs from Napster API
         let napsterSongData = response.data.tracks;
-        napsterDiv.innerHTML = napsterSongData;
 
+        //looping through the songs in the Napster API
         for (i = 0; i < napsterSongData.length; i++) {
             let myUrl = napsterSongData[i].previewURL;
+            let artistID = napsterSongData[i].artistId;
+            let artistImageURL = "https://api.napster.com/imageserver/v2/artists/" + artistID +
+                "/images/150x100.jpg?apikey=" + napsterKey + "&limit=9";
+            let artistImage = "<img src=' " + artistImageURL + "'/>";
 
+            //creating a div for Napster and assigning it a class
+            songDiv = document.createElement("div");
+            songDiv.classList.add("songDisplay");
+            songDiv.id = "songBox";
 
-
-//         document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
-//         document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
-
-//         //     weatherDiv = document.createElement("div");
-//         //     weatherDiv.classList.add("weatherDisplay");
-
-//         //     console.log
-
-//         //     weatherDiv.innerHTML = weatherData;
-
-//         //    document.getElementById("weatherTable").append(weatherDiv);
-//     })
-
-
-        
-
-            let html = "<audio controls><source class='audioSource' src=" + myUrl + "></audio>"
-            document.getElementById("napsterDiv").innerHTML += html;
+            //creating artist images and audio elements for each song in the API array
+            let html = artistImage + "<audio controls><source class='audioSource' src=" + myUrl + "></audio>";
+            document.getElementById("songBox").innerHTML += html;
         }
     })
 
-    axios.get(napsterImageURL).then(function (response) {
-        console.log(response);
 
-    })
-
-
-    // document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
-    // document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
+    //         document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
+    //         document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
 
     //         //     weatherDiv = document.createElement("div");
     //         //     weatherDiv.classList.add("weatherDisplay");
@@ -102,4 +83,5 @@ document.getElementById("button").addEventListener("click", function (event) {
 
     //         //    document.getElementById("weatherTable").append(weatherDiv);
     //     })
+
 }) 
