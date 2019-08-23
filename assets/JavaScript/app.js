@@ -26,6 +26,8 @@ document.getElementById("button").addEventListener("click", function (event) {
     const napsterSongURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" + napsterKey + "&limit=9";
     console.log(napsterSongURL);
 
+    
+
     // Get function using Axios to call the response of Open Weather
     axios.get(weatherURL).then(function (response) {
         console.log(response.data);
@@ -39,11 +41,17 @@ document.getElementById("button").addEventListener("click", function (event) {
         weatherDiv.innerHTML = weatherData;
 
         document.getElementById("weatherDiv").append(weatherDiv);
+
+        document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
+        document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
+
+
     })
 
     // Get function using Axios to call the response of Napster
     axios.get(napsterSongURL).then(function (response) {
         console.log(response);
+
 
         //grabbing songs from Napster API
         let napsterSongData = response.data.tracks;
@@ -55,6 +63,7 @@ document.getElementById("button").addEventListener("click", function (event) {
             let artistImageURL = "https://api.napster.com/imageserver/v2/artists/" + artistID +
                 "/images/300x300.jpg?apikey=" + napsterKey + "&limit=9";
             let artistImage = "<img id='artistImage' src=' " + artistImageURL + "'/>";
+
 
             //creating a div for Napster and assigning it a class
             let songDiv = document.createElement("div");
@@ -84,4 +93,3 @@ document.getElementById("button").addEventListener("click", function (event) {
     //         //    document.getElementById("weatherTable").append(weatherDiv);
     //     })
 
- 
