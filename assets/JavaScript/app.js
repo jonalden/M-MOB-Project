@@ -27,6 +27,8 @@ document.getElementById("button").addEventListener("click", function (event) {
     const napsterURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" + napsterKey + "&limit=9";
     console.log(napsterURL);
 
+    
+
     // Get function using Axios to call the response of Open Weather
 
     axios.get(weatherURL).then(function (response) {
@@ -42,6 +44,11 @@ document.getElementById("button").addEventListener("click", function (event) {
         weatherDiv.innerHTML = weatherData;
 
         document.getElementById("weatherDiv").append(weatherDiv);
+
+        document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
+        document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
+
+
     })
 
     // Get function using Axios to call the response of Napster
@@ -60,9 +67,7 @@ document.getElementById("button").addEventListener("click", function (event) {
 
 
 
-//         document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
-//         document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
-
+        
 //         //     weatherDiv = document.createElement("div");
 //         //     weatherDiv.classList.add("weatherDisplay");
 
@@ -103,6 +108,8 @@ document.getElementById("button").addEventListener("click", function (event) {
     })
     
 })
+
+
 
 
 
