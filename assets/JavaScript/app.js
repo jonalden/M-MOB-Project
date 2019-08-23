@@ -22,7 +22,6 @@ document.getElementById("button").addEventListener("click", function (event) {
     const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
     console.log(weatherURL);
 
-
     //variable containing the Napster URL
     const napsterSongURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" + napsterKey + "&limit=9";
     console.log(napsterSongURL);
@@ -46,8 +45,6 @@ document.getElementById("button").addEventListener("click", function (event) {
     axios.get(napsterSongURL).then(function (response) {
         console.log(response);
 
-
-
         //grabbing songs from Napster API
         let napsterSongData = response.data.tracks;
 
@@ -56,20 +53,23 @@ document.getElementById("button").addEventListener("click", function (event) {
             let myUrl = napsterSongData[i].previewURL;
             let artistID = napsterSongData[i].artistId;
             let artistImageURL = "https://api.napster.com/imageserver/v2/artists/" + artistID +
-                "/images/150x100.jpg?apikey=" + napsterKey + "&limit=9";
-            let artistImage = "<img src=' " + artistImageURL + "'/>";
+                "/images/300x300.jpg?apikey=" + napsterKey + "&limit=9";
+            let artistImage = "<img id='artistImage' src=' " + artistImageURL + "'/>";
 
             //creating a div for Napster and assigning it a class
-            songDiv = document.createElement("div");
+            let songDiv = document.createElement("div");
             songDiv.classList.add("songDisplay");
-            songDiv.id = "songBox";
+            
 
             //creating artist images and audio elements for each song in the API array
             let html = artistImage + "<audio controls><source class='audioSource' src=" + myUrl + "></audio>";
-            document.getElementById("songBox").innerHTML += html;
-        }
-    })
+            songDiv.innerHTML += html;
 
+            document.getElementById("napsterDiv").append(songDiv);
+        }
+        
+    })
+})
 
     //         document.getElementById("weather").textContent = (response.data.main.temp - 273.15) * 9/5 + 32;
     //         document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
@@ -84,4 +84,4 @@ document.getElementById("button").addEventListener("click", function (event) {
     //         //    document.getElementById("weatherTable").append(weatherDiv);
     //     })
 
-}) 
+ 
