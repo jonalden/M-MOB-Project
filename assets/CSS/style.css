@@ -1,23 +1,58 @@
 body {
-    background-image: linear-gradient(0deg,rgba(134, 8, 8, 0.5),rgba(13, 10, 235, 0.5)),url("https://i.pinimg.com/originals/c3/97/77/c397773bfdbe6913d7953e33df4da9ee.jpg") ;
+    background-image: linear-gradient(0deg, rgba(134, 8, 8, 0.5), rgba(13, 10, 235, 0.5)), url("https://i.pinimg.com/originals/c3/97/77/c397773bfdbe6913d7953e33df4da9ee.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Lexend Mega', sans-serif;
 }
 
-#weatherDiv, #napsterDiv {
+h3 {
+    text-align: center;
+    color: white;
+}
+
+#weatherDiv {
     border: 1px solid white;
     border-radius: 8px;
-    height: 200px;
     margin: 30px auto;
+    clear: both;
+}
+
+/* div containing audio player and image */
+.songDisplay {
+    margin: 15px;
+    margin-left: 45px;
+    width: 300px;
+    background: black;
+    float: left;
+    border-radius: 25px;
+}
+
+#artistImage {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
 }
 
 #button {
-    width: 150px;
-    margin: 0 auto;
-    background-color: rgb(195, 64, 247);
-    border-color: rgb(195, 64, 247);
+    border: none;
+    background: rgba(218, 15, 218, 0.9);
+    color: #ffffff !important;
+    font-weight: 100;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+}
+
+#button:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: rgba(218, 15, 218, 0.8);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    transition: all 0.3s ease 0s;
 }
 
 h1 {
@@ -27,28 +62,41 @@ h1 {
 #motivation {
     width: 60%;
     margin: 0 auto 40px;
-    color: white; 
+    color: white;
 }
 
 #header {
-    background: rgb(211,211,211, 0.4)!important;
+    background: rgb(211, 211, 211, 0.4)!important;
     padding: 20px !important;
     text-align: center;
 }
 
 #userInput {
-    background: rgb(211,211,211, 0.4)!important;
+    background: rgb(211, 211, 211, 0.4)!important;
     text-align: center;
     width: 50%;
     margin: 0 auto;
+    transition: all 0.5s ease 0s;
+}
+
+#userInput:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: rgba(218, 15, 218, 0.4);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    transition: all 0.3s ease 0s;
 }
 
 #userInput::placeholder {
     color: whitesmoke;
+    font-size: 18px;
 }
 
 
 .weatherDisplay, .napsterDisplay {
+    clear: both;
     color: white;
 }
 
@@ -63,14 +111,11 @@ h1 {
 #imageText {
     position: absolute;
     bottom: 0%;
-    left:40%;
+    left: 40%;
     color: white;
     font-size: 60px;
     font-family: 'Rock Salt', cursive;
-
 }
-
-
 
 .weather {
     margin-top: 100px;
@@ -78,8 +123,6 @@ h1 {
     margin-right: 200px;
     color: aliceblue;
 }
-
-
 
 /* Table1/video */
 
