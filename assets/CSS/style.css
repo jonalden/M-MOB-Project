@@ -4,21 +4,110 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Lexend Mega', sans-serif;
+    margin-bottom: 200px;
 }
 
-h3 {
+/* header div with logo */
+
+#header {
+    background: rgb(211, 211, 211, 0.4)!important;
+    padding: 20px !important;
+    text-align: center;
+}
+
+/* logo in the header */
+
+#imageContainer {
+    position: relative;
+}
+
+/* text on the logo, "Be4" */
+
+#imageText {
+    position: absolute;
+    bottom: 0%;
+    left: 40%;
+    color: white;
+    font-size: 60px;
+    font-family: 'Rock Salt', cursive;
+}
+
+/* Text on landing page describing the app */
+
+#slogan {
     text-align: center;
     color: white;
+    font-size: 50px;
+    width: 60%;
+    margin: 100px auto 80px;
 }
 
-#weatherDiv {
-    border: 1px solid white;
-    border-radius: 8px;
-    margin: 30px auto;
-    clear: both;
+/* form input to select city */
+
+#userInput {
+    /* background: wh!important; */
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    transition: all 0.5s ease 0s;
 }
+
+/* hover animation for form input */
+
+#userInput:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: rgba(218, 15, 218, 0.4);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    transition: all 0.3s ease 0s;
+}
+
+/* placeholder text inside of form */
+
+#userInput::-webkit-input-placeholder {
+    color: black;
+}
+
+/* change text color on hover */
+
+#userInput:hover::-webkit-input-placeholder {
+    color: white
+}
+
+/* quotes that cycle after button pressed */
+
+#motivationalQuote {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin: 200px auto;
+    height: 300px;
+}
+
+/* a little something to get you moving */
+
+#musicQuote {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
 
 /* div containing audio player and image */
+
+#napsterDiv {
+    clear: both;
+    overflow: hidden;
+    padding-bottom: 25px;
+}
+
+/* div containing each song with image and player inside */
+
 .songDisplay {
     margin: 15px;
     margin-left: 45px;
@@ -26,12 +115,32 @@ h3 {
     background: black;
     float: left;
     border-radius: 25px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
+
+/* adds hover animation to each .songDisplay */
+
+.songDisplay:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* image behind music player*/
 
 #artistImage {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
+
+/* centers the button */
+
+#submitButton {
+    text-align: center;
+}
+
+/* frist submit button*/
 
 #button {
     border: none;
@@ -45,6 +154,8 @@ h3 {
     transition: all 0.3s ease 0s;
 }
 
+/* hover animations for submit button */
+
 #button:hover {
     color: white !important;
     font-weight: 700 !important;
@@ -55,102 +166,97 @@ h3 {
     transition: all 0.3s ease 0s;
 }
 
-h1 {
+/* buttin added to the bottom of the music options */
+
+#newButton {
     text-align: center;
 }
 
-#motivation {
-    width: 60%;
-    margin: 0 auto 40px;
-    color: white;
+.newbutton {
+    border: none;
+    background: rgba(218, 15, 218, 0.9);
+    color: #ffffff !important;
+    font-weight: 100;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    margin-top: 40px;
 }
 
-#header {
-    background: rgb(211, 211, 211, 0.4)!important;
-    padding: 20px !important;
-    text-align: center;
-}
-
-#userInput {
-    background: rgb(211, 211, 211, 0.4)!important;
-    text-align: center;
-    width: 50%;
-    margin: 0 auto;
-    transition: all 0.5s ease 0s;
-}
-
-#userInput:hover {
+.newButton:hover {
     color: white !important;
     font-weight: 700 !important;
     letter-spacing: 3px;
-    background: rgba(218, 15, 218, 0.4);
+    background: rgba(218, 15, 218, 0.8);
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
     transition: all 0.3s ease 0s;
 }
 
-#userInput::placeholder {
-    color: whitesmoke;
-    font-size: 18px;
-}
+/* div containing the weather info */
 
-
-.weatherDisplay, .napsterDisplay {
+#weatherDiv {
+    display: none;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-radius: 8px;
+    margin: 30px auto 200px;
     clear: both;
-    color: white;
+    background: rgba(218, 15, 218, 0.8);
 }
 
-#submitButton {
-    text-align: center;
-}
-
-#imageContainer {
-    position: relative;
-}
-
-#imageText {
-    position: absolute;
-    bottom: 0%;
-    left: 40%;
-    color: white;
-    font-size: 60px;
-    font-family: 'Rock Salt', cursive;
-}
-
-.weather {
-    margin-top: 100px;
-    margin-left: 200px;
-    margin-right: 200px;
-    color: aliceblue;
-}
-
-/* Table1/video */
+/* weather table */
 
 .table {
-    background: rgb(211,211,211, 0.6)!important;
+    table-layout: fixed;
     margin-bottom: 100px;
+    color: white;
 }
 
-/* Table2/video */
+#tableHeader {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 80px;
+}
 
-.table2 {
-    background: rgb(211,211,211, 0.6)!important;
-    margin-bottom: 100px;
+/* running fast in ... */
+
+#city {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+th {
+    font-size: 20px;
+    padding-left: 7px !important;
+}
+
+td {
+    font-size: 30px;
+    padding: none !important;
+    text-align: left;
 }
 
 
-/* Table3/Brewery */
+/* div containing brewery info */
 
-.table3 {
-    background: rgb(211,211,211, 0.6)!important;
-    margin-bottom: 100px;
+#beerDiv {
+    margin-top: 200px;
+    width: 100%;
 }
-
-
 
 /* footer */
-.card {
-    background: rgb(211,211,211, 0.6)!important;
-    border-bottom: 1px solid lightgray;
-}
 
+.card {
+    background: rgb(211, 211, 211, 0.6)!important;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 200px;
+}

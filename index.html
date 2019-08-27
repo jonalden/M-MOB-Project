@@ -18,28 +18,6 @@
 
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- jumbotron header -->
     <div class="jumbotron jumbotron-fluid" id="header">
         <div class="container">
@@ -51,11 +29,11 @@
         </div>
     </div>
 
-    <!-- motivational quote under header -->
-    <h1 id="motivation">“The voice inside your head that says you can’t do this is a liar.”</h1>
+
+    <h3 id="slogan">The motivation needed to hit the ground running is just a click away!</h3>
 
     <!-- form  -->
-    <form>
+    <form id="form">
         <div class="container" id="submitButton">
             <div class="form-group">
                 <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp"
@@ -65,13 +43,8 @@
         </div>
     </form>
 
-    <!-- div for displaying the weather information -->
-    <!-- <div class="container" id="weatherDiv">
-    </div> -->
-
-    <!-- div for displaying the music player -->
-    <div class="container" id="napsterDiv">
-        <h3>A little something to get you moving!</h3>
+    <!-- motivational quote displayed after quote -->
+    <div class="container" id="motivationalQuote">
     </div>
 
     <!-- First table for weather cast -->
@@ -79,66 +52,60 @@
         <table class="table" id="weatherTable">
             <thead>
                 <tr>
-                    <h1 scope="tableTitle1">Todays Weather Cast</h1>
+                    <h2 scope="tableTitle1" id="tableHeader">It's a beautiful day to lace up your shoes and see the
+                        world!</h2>
+                </tr>
+                <tr>
+                    <h3 id="city"></h3>
                 </tr>
             </thead>
             <tbody>
+
                 <tr>
                     <th scope="row"></th>
-                    <th id="weather">Weather Info goes here</th>
+                    <th id="weatherTitle">Temperature</th>
+                    
+                    <th scope="row"></th>
+                    <th id="weatherDescriptionTitle">Conditions</th>
+                    
+                    <th scope="row"></th>
+                    <th id="humidityTitle">Humidity</th>
+                    
+                    <th scope="row"></th>
+                    <th id="windTitle">Wind</th>
                 </tr>
                 <tr>
-                    <th scope="row"></th>
-                    <th id="weatherDescription">Weather Image</th>
+                    <td scope="row"></td>
+                    <td id="weather"></td>
+
+                    <td scope="row"></td>
+                    <td id="weatherDescription"></td>
+
+                    <td scope="row"></td>
+                    <td id="humidity"></td>
+                    
+                    <td scope="row"></td>
+                    <td id="wind"></td>
                 </tr>
             </tbody>
         </table>
     </div>
 
 
-    <!-- Third table for resturant/brewery -->
-    <div class="container" id="beerDiv">
-        <table class="table3" id="beerTable">
-            <thead>
-                <tr>
-                    <th scope="col">Best Brewery</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                </tr>
-            </tbody>
+    <!-- a little something to get you moving -->
+    <div class="music-quote" id="musicQuote">
     </div>
-    </table>
 
-    <!-- Footer -->
-    <div class="card">
-        <div class="card-header">
-            Quote
-        </div>
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
-                </footer>
-            </blockquote>
-        </div>
+    <!-- div for displaying the music player -->
+    <div class="container" id="napsterDiv">
     </div>
+
+    <!-- button created when first submit button is clicked, appeneded to bottom of songs -->
+    <div id="newButton"></div>
+
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
