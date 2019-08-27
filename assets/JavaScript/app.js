@@ -23,22 +23,12 @@ input.addEventListener("keydown", function (event) {
 //main function to display all info after submit button is clicked
 document.getElementById("button").addEventListener("click", function (event) {
 
-
-
     // grabbing the user input from the form
     event.preventDefault()
     let city = document.getElementById("userInput").value.trim();
 
-    //variable containing the Open Weather URL
-    const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
-    console.log(weatherURL);
-
-    //variable containing the Napster URL
-    const napsterSongURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" +
-        napsterKey + "&limit=" + perPage + "&offset=" + offset;
-    console.log(napsterSongURL);
-
-
+    // display hidden weather table
+    document.getElementById("weatherDiv").style.display = "block";
 
     //if statement to run the functions in the click listener 
     if (offset === 0) {
@@ -73,9 +63,13 @@ document.getElementById("button").addEventListener("click", function (event) {
 
 
 
-
     //function for getting weather data
     function getweather() {
+
+
+        //variable containing the Open Weather URL
+        const weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + weatherKey;
+        console.log(weatherURL);
 
         // Get function using Axios to call the response of Open Weather
         axios.get(weatherURL).then(function (response) {
@@ -85,22 +79,28 @@ document.getElementById("button").addEventListener("click", function (event) {
             weatherDiv = document.createElement("div");
             weatherDiv.classList.add("weatherDisplay");
 
-            document.getElementById("weather").textContent = Math.floor(response.data.main.temp - 273.15) * 9 / 5 + 32 + " " + "degrees Farenheit";
+            document.getElementById("weather").textContent = Math.floor(response.data.main.temp - 273.15) * 9 / 5 + 32 + " " + "Degrees ";
             document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
+            document.getElementById("humidity").textContent = response.data.main.humidity + "%";
+            document.getElementById("city").textContent = "Running fast in " + " " + response.data.name;
+            document.getElementById("wind").textContent = Math.floor(response.data.wind.speed)+ " " + "MPH";
         })
     }
 
 
 
-
     function getMusic() {
+
+        //variable containing the Napster URL
+        let napsterSongURL = "https://api.napster.com/v2.1/playlists/pp.188152066/tracks?apikey=" +
+            napsterKey + "&limit=" + perPage + "&offset=" + offset;
 
         // Get function using Axios to call the response of Napster
         axios.get(napsterSongURL).then(function (response) {
-            console.log(response);
 
             //grabbing songs from Napster API
             let napsterSongData = response.data.tracks;
+            console.log(response.data);
 
             //adds 9 new songs when button is pressed
             offset += napsterSongData.length;
@@ -136,12 +136,12 @@ document.getElementById("button").addEventListener("click", function (event) {
 
 
     function moveButton() {
-
-        // const newButton = document.getElementById("button");
-        // newButton.innerHTML = '<button type="button" class="btn btn-primary" id="button" onclick="getMusic()">Grab More Music</button>';
-        // document.getElementById("newButton").append(newButton);
+        let newButton = document.createElement("button");
+        newButton.classList.add("newButton");
+        newButton.innerHTML = "Grab More Music";
+        newButton.addEventListener("click", getMusic);
+        document.getElementById("newButton").append(newButton);
     }
-
 
     //hiding the form and submit button after being clicked to better display all data
     document.getElementById("form").innerHTML = "";
