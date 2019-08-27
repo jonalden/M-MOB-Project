@@ -106,6 +106,8 @@ body {
     padding-bottom: 25px;
 }
 
+
+
 /* div containing each song with image and player inside */
 
 .songDisplay {
@@ -259,4 +261,12 @@ td {
     bottom: 0px;
     width: 100%;
     margin-top: 200px;
+}
+
+#beerDiv {
+
+    background: gray;
+    width: 400px;
+    height: 700px ;
+    
 }

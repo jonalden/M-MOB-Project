@@ -36,6 +36,7 @@ document.getElementById("button").addEventListener("click", function (event) {
         getQuotes();
         getweather();
         moveButton();
+        getBeer();
     }
     else {
         getMusic();
@@ -83,7 +84,7 @@ document.getElementById("button").addEventListener("click", function (event) {
             document.getElementById("weatherDescription").textContent = response.data.weather[0].description;
             document.getElementById("humidity").textContent = response.data.main.humidity + "%";
             document.getElementById("city").textContent = "Running fast in " + " " + response.data.name;
-            document.getElementById("wind").textContent = Math.floor(response.data.wind.speed)+ " " + "MPH";
+            document.getElementById("wind").textContent = Math.floor(response.data.wind.speed) + " " + "MPH";
         })
     }
 
@@ -142,6 +143,32 @@ document.getElementById("button").addEventListener("click", function (event) {
         newButton.addEventListener("click", getMusic);
         document.getElementById("newButton").append(newButton);
     }
+
+// Beer funtion
+
+    function getBeer() {
+        let getBeerURL = "https://api.openbrewerydb.org/breweries?per_page=5&by_city=" + city;
+        axios.get(getBeerURL).then(function (response) {
+            let beerData = response.data;
+            console.log(beerData);
+            let beerList = [];
+            for (i = 0; i < beerData.length; i++) {
+                let breweryName = response.data[i].name;
+                let breweryAddress = response.data[i].street;
+                let breweryWebsite = response.data[i].website_url;
+
+                let BreweryInfo = "<div> Brewery name: " + breweryName + "<br> Street: " + breweryAddress + "<br> <a href=" + breweryWebsite + ">Visit " + breweryName + " webiste </a><hr></div>";
+            beerList.push(BreweryInfo)
+        }
+                $("#beerDiv").html(beerList);
+            
+
+    
+                
+            
+        })
+    }
+
 
     //hiding the form and submit button after being clicked to better display all data
     document.getElementById("form").innerHTML = "";
