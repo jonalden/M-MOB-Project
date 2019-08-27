@@ -18,28 +18,6 @@
 
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- jumbotron header -->
     <div class="jumbotron jumbotron-fluid" id="header">
         <div class="container">
@@ -51,11 +29,11 @@
         </div>
     </div>
 
-    <!-- motivational quote under header -->
-    <h1 id="motivation">“The voice inside your head that says you can’t do this is a liar.”</h1>
+    
+    <h3 id="slogan">The motivation needed to hit the ground running is just a click away!</h3>
 
     <!-- form  -->
-    <form>
+    <form id="form">
         <div class="container" id="submitButton">
             <div class="form-group">
                 <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp"
@@ -65,17 +43,12 @@
         </div>
     </form>
 
-    <!-- div for displaying the weather information -->
-    <!-- <div class="container" id="weatherDiv">
-    </div> -->
-
-    <!-- div for displaying the music player -->
-    <div class="container" id="napsterDiv">
-        <h3>A little something to get you moving!</h3>
+    <!-- motivational quote displayed after quote -->
+    <div class="container" id="motivationalQuote">
     </div>
 
     <!-- First table for weather cast -->
-    <div class="container" id="weatherDiv">
+    <div class="container" id="weatherDiv"> 
         <table class="table" id="weatherTable">
             <thead>
                 <tr>
@@ -93,11 +66,20 @@
                 </tr>
             </tbody>
         </table>
+    </div> 
+
+    <!-- a little something to get you moving -->
+    <div class="music-quote" id="musicQuote">
     </div>
 
+    <!-- div for displaying the music player -->
+    <div class="container" id="napsterDiv">
+    </div>
+
+    <div id="newButton"></div>
 
     <!-- Third table for resturant/brewery -->
-    <div class="container" id="beerDiv">
+     <div class="container" id="beerDiv"> 
         <table class="table3" id="beerTable">
             <thead>
                 <tr>
@@ -114,22 +96,19 @@
                     <td>Jacob</td>
                 </tr>
             </tbody>
-    </div>
-    </table>
+        </table>
+    </div> -->
 
     <!-- Footer -->
-    <div class="card">
-        <div class="card-header">
-            Quote
-        </div>
+    <!-- <div class="card">
         <div class="card-body">
             <blockquote class="blockquote mb-0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                
+                <footer class="blockquote-footer"> <cite title="Source Title"></cite>
                 </footer>
             </blockquote>
         </div>
-    </div>
+    </div> -->
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>

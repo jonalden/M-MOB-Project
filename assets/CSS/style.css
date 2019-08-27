@@ -6,19 +6,62 @@ body {
     font-family: 'Lexend Mega', sans-serif;
 }
 
-h3 {
+/* Text on landing page describing the app */
+
+#slogan {
     text-align: center;
     color: white;
+    font-size: 50px;
+    width: 60%;
+    margin: 100px auto 80px;
 }
+
+/* quotes that cycle after button pressed */
+
+#motivationalQuote {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+    margin: 100px auto;
+    height: 300px;
+}
+
+/* a little something to get you moving */
+
+#musicQuote {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+
+/* div containing the weather info */
 
 #weatherDiv {
     border: 1px solid white;
     border-radius: 8px;
-    margin: 30px auto;
+    margin: 30px auto 200px;
     clear: both;
 }
 
+/* div containing brewery info */
+
+#beerDiv {
+    margin-top: 200px;
+    width: 100%;
+}
+
 /* div containing audio player and image */
+
+#napsterDiv {
+    clear: both;
+    overflow: hidden;
+    padding-bottom: 25px;
+}
+
+/* div containing each song with image and player inside */
+
 .songDisplay {
     margin: 15px;
     margin-left: 45px;
@@ -26,12 +69,32 @@ h3 {
     background: black;
     float: left;
     border-radius: 25px;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
+
+/* adds hover animation to each .songDisplay */
+
+.songDisplay:hover {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+/* image behind music player*/
 
 #artistImage {
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
 }
+
+/* centers the button */
+
+#submitButton {
+    text-align: center;
+}
+
+/* submit button*/
 
 #button {
     border: none;
@@ -45,6 +108,8 @@ h3 {
     transition: all 0.3s ease 0s;
 }
 
+/* hover animations for submit button */
+
 #button:hover {
     color: white !important;
     font-weight: 700 !important;
@@ -55,15 +120,36 @@ h3 {
     transition: all 0.3s ease 0s;
 }
 
-h1 {
+/* buttin added to the bottom of the music options */
+
+#newButton {
     text-align: center;
 }
 
-#motivation {
-    width: 60%;
-    margin: 0 auto 40px;
-    color: white;
+.new-button {
+    border: none;
+    background: rgba(218, 15, 218, 0.9);
+    color: #ffffff !important;
+    font-weight: 100;
+    margin-bottom: 50px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    margin-top: 40px;
 }
+
+.new-button:hover {
+    color: white !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px;
+    background: rgba(218, 15, 218, 0.8);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    transition: all 0.3s ease 0s;
+}
+
+/* header div with logo */
 
 #header {
     background: rgb(211, 211, 211, 0.4)!important;
@@ -71,13 +157,17 @@ h1 {
     text-align: center;
 }
 
+/* form input to select city */
+
 #userInput {
-    background: rgb(211, 211, 211, 0.4)!important;
+    /* background: wh!important; */
     text-align: center;
-    width: 50%;
+    width: 70%;
     margin: 0 auto;
     transition: all 0.5s ease 0s;
 }
+
+/* hover animation for form input */
 
 #userInput:hover {
     color: white !important;
@@ -89,24 +179,25 @@ h1 {
     transition: all 0.3s ease 0s;
 }
 
-#userInput::placeholder {
-    color: whitesmoke;
-    font-size: 18px;
+/* placeholder text inside of form */
+
+#userInput::-webkit-input-placeholder {
+    color: black;
 }
 
+/* change text color on hover */
 
-.weatherDisplay, .napsterDisplay {
-    clear: both;
-    color: white;
+#userInput:hover::-webkit-input-placeholder {
+    color: white
 }
 
-#submitButton {
-    text-align: center;
-}
+/* logo in the header */
 
 #imageContainer {
     position: relative;
 }
+
+/* text on the logo, "Be4" */
 
 #imageText {
     position: absolute;
@@ -127,30 +218,31 @@ h1 {
 /* Table1/video */
 
 .table {
-    background: rgb(211,211,211, 0.6)!important;
+    background: rgb(211, 211, 211, 0.6)!important;
     margin-bottom: 100px;
 }
 
 /* Table2/video */
 
 .table2 {
-    background: rgb(211,211,211, 0.6)!important;
+    background: rgb(211, 211, 211, 0.6)!important;
     margin-bottom: 100px;
 }
-
 
 /* Table3/Brewery */
 
 .table3 {
-    background: rgb(211,211,211, 0.6)!important;
+    background: rgb(211, 211, 211, 0.6)!important;
     margin-bottom: 100px;
 }
 
-
-
 /* footer */
-.card {
-    background: rgb(211,211,211, 0.6)!important;
-    border-bottom: 1px solid lightgray;
-}
 
+.card {
+    background: rgb(211, 211, 211, 0.6)!important;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 200px;
+}
