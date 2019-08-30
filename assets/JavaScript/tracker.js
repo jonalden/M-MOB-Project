@@ -51,6 +51,7 @@ document
 function updateDisplay(result) {
     console.log(result);
 
+    let distanceInput = document.getElementById("distanceInput").value.trim();
     let tableContainer = document.getElementById("tableBody");
     tableContainer.innerHTML = "";
 
@@ -65,18 +66,20 @@ function updateDisplay(result) {
         console.log("end time", endTime);
         console.log("end time converted", endTimeConverted);
         console.log("start time converted", startTimeConverted);
-
+        
         let diffTime = endTimeConverted.diff(moment(startTimeConverted), "minutes");
+        let averageSpeed = diffTime / distanceInput;
+        console.log("average speed", averageSpeed);
         console.log("diff time", diffTime);
 
         //populating the HTML elements with the result index
         tableContainer.innerHTML += "<tr><td>" + result[i].dateInput +
-            "</td><td>" + result[i].distanceInput + "</td><td>" + diffTime + "</td><td>"
-            + result[i].distanceInput + "</td>";
+            "</td><td>" + result[i].distanceInput + "</td><td>" + diffTime + " " + " minutes" + "</td><td>"
+            + averageSpeed + "</td>";
     }
 }
 
 // window.setInterval(function () {
 
-    
+
 // }, 1000)

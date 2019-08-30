@@ -8,8 +8,6 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lexend+Mega&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Rock+Salt&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/CSS/tracker.css">
     <title>Running App</title>
 </head>
@@ -18,11 +16,15 @@
 
     <!-- jumbotron header -->
     <div class="jumbotron jumbotron-fluid" id="header">
+        <a id="trackLink" href="tracker.html">Home</a>
         <div class="container">
             <div id="imageContainer">
-                <img src="https://www.clipartsfree.net/vector/medium/32093-tnt-girl-running-images.png" width="130"
-                    height="130" alt="Tnt Girl Running PNG image" />
-                <div id="imageText">Be4</div>
+                <a href="index.html"><img
+                        src="https://www.clipartsfree.net/vector/medium/32093-tnt-girl-running-images.png" width="130"
+                        height="130" alt="Tnt Girl Running PNG image" /></a>
+                <a href="index.html">
+                    <div id="imageText">Be4</div>
+                </a>
             </div>
         </div>
     </div>
@@ -75,10 +77,9 @@
         </table>
     </div>
 
-    
 
 
-
+    >
     <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"></script>
