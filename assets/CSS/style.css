@@ -45,7 +45,6 @@ body {
 /* form input to select city */
 
 #userInput {
-    /* background: wh!important; */
     text-align: center;
     width: 70%;
     margin: 0 auto;
@@ -79,12 +78,22 @@ body {
 /* quotes that cycle after button pressed */
 
 #motivationalQuote {
+    display: none;
     text-align: center;
     color: white;
     font-size: 50px;
     margin: 200px auto;
-    height: 300px;
+    height: 300px;  
+
+    animation: change_opacity 4s infinite alternate;
 }
+
+
+@keyframes change_opacity {
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
 
 /* a little something to get you moving */
 
@@ -97,7 +106,6 @@ body {
     margin-top: 100px;
 }
 
-
 /* div containing audio player and image */
 
 #napsterDiv {
@@ -105,8 +113,6 @@ body {
     overflow: hidden;
     padding-bottom: 25px;
 }
-
-
 
 /* div containing each song with image and player inside */
 
@@ -162,7 +168,7 @@ body {
     color: white !important;
     font-weight: 700 !important;
     letter-spacing: 3px;
-    background: rgba(218, 15, 218, 0.8);
+    background: rgba(218, 15, 218, 0.7);
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
     transition: all 0.3s ease 0s;
@@ -191,7 +197,7 @@ body {
     color: white !important;
     font-weight: 700 !important;
     letter-spacing: 3px;
-    background: rgba(218, 15, 218, 0.8);
+    background: rgba(218, 15, 218, 0.7);
     -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
     -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
     transition: all 0.3s ease 0s;
@@ -201,8 +207,8 @@ body {
 
 #weatherDiv {
     display: none;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
     border-radius: 8px;
     margin: 30px auto 200px;
     clear: both;
@@ -212,17 +218,23 @@ body {
 /* weather table */
 
 .table {
-    table-layout: fixed;
+    text-align: center;
+    table-layout: inherit;
     margin-bottom: 100px;
     color: white;
 }
+
+#weather, #weatherDescription, #humidity, #wind {
+    text-align: center;
+}
+
 
 #tableHeader {
     text-align: center;
     color: white;
     font-size: 40px;
     margin-top: 70px;
-    margin-bottom: 80px;
+    margin-bottom: 50px;
 }
 
 /* running fast in ... */
@@ -244,29 +256,50 @@ td {
     text-align: left;
 }
 
-
 /* div containing brewery info */
 
 #beerDiv {
-    margin-top: 200px;
-    width: 100%;
+    display: none;
+    margin-top: 300px;
+    background: rgba(218, 15, 218, 0.8);
+    padding: 20px;
+    border-radius: 8px;
 }
 
-/* footer */
+/* eadch individual brewery displayed on page */
 
-.card {
-    background: rgb(211, 211, 211, 0.6)!important;
-    border-bottom: 1px solid lightgray;
-    position: relative;
-    bottom: 0px;
-    width: 100%;
-    margin-top: 200px;
+.breweryInfo {
+    color: white;
+    text-align: center;
+    font-size: 22px;
 }
 
-#beerDiv {
+#beerTitle {
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 70px;
+    margin-bottom: 50px;
+}
 
-    background: gray;
-    width: 400px;
-    height: 700px ;
-    
+.breweryWebsite {
+    display: inline-block;
+    transition: all 0.3s ease 0s;
+    color: rgba(13, 10, 235);
+}
+
+.breweryWebsite:hover {
+    padding: 0 10px;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0);
+    transition: all 0.3s ease 0s;
+}
+
+h4 {
+    margin-bottom: 0px !important;
+    padding-bottom: 0px !important;
 }
