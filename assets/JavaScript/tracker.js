@@ -52,6 +52,7 @@ function updateDisplay(result) {
     console.log(result);
 
     let tableContainer = document.getElementById("tableBody");
+    tableContainer.innerHTML = "";
 
     for (let i = 0; i < result.length; i++) {
 
