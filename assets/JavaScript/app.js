@@ -27,23 +27,35 @@ document.getElementById("button").addEventListener("click", function (event) {
     event.preventDefault()
     let city = document.getElementById("userInput").value.trim();
 
-    // display hidden weather table
+    // if user enters a comma
+    const cityIncludes = city.includes(",");
+    console.log (cityIncludes);
+
+    // alert "can't use comma"
+    if (cityIncludes) {
+        alert ("Please only type the city. Try again");
+        
+    }
+
+    // if user doesn't enter a comma run functions
+    else {
     document.getElementById("weatherDiv").style.display = "block";
     document.getElementById("motivationalQuote").style.display = "block";
     document.getElementById("beerDiv").style.display = "block";
+    document.getElementById("form").innerHTML = "";
+    document.getElementById("slogan").innerHTML = "";
 
-    //if statement to run the functions in the click listener 
-    if (offset === 0) {
-        getMusic();
-        getQuotes();
-        getweather();
-        moveButton();
-        getBeer();
+        if (offset === 0) {
+            getMusic();
+            getQuotes();
+            getweather();
+            moveButton();
+            getBeer();
+        }
+        else {
+            getMusic();
+        }
     }
-    else {
-        getMusic();
-    }
-
 
 
     //function for getting quotes from our array and displayin them on the page
@@ -171,9 +183,4 @@ document.getElementById("button").addEventListener("click", function (event) {
             document.getElementById("beerDiv").innerHTML = beerTitle + beerList.join(" ");
         })
     }
-
-
-    //hiding the form and submit button after being clicked to better display all data
-    document.getElementById("form").innerHTML = "";
-    document.getElementById("slogan").innerHTML = "";
 })
