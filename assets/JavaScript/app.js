@@ -182,7 +182,7 @@ document.getElementById("button").addEventListener("click", function (event) {
                 let breweryInfo = "<div class='breweryInfo'><h2>" + breweryName + "</h2>" + breweryAddress + "<br> <a class='breweryWebsite' href=" + breweryWebsite + ">www. " + breweryName + " .com </a><br><hr></div>";
                 beerList.push(breweryInfo)
             }
-            const beerTitle = "<p id='beerTitle'>Breweries you can run to</p><br><hr>";
+            const beerTitle = "<p id='beerTitle'>Breweries Near You</p><br><hr>";
             document.getElementById("beerDiv").innerHTML = beerTitle + beerList.join(" ");
         })
     }
