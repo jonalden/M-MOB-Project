@@ -3,6 +3,8 @@ const weatherKey = "6a0d470ffbecb6a50a8e962ee8b76d25"
 const napsterKey = "MjMxMDBhNjktY2YzNS00MTQwLWJjMTUtZGJmMmE0NjY3ODhi"
 let perPage = 9;
 let offset = 0;
+let beerPerPage = 5;
+let page = 0;
 const userInput = document.getElementById("button");
 
 const quotes = ['"The voice inside your head that says this is impossible is a liar"', '"Run when you can, walk if you must, crawl if you have to, just never give up"', '"We are what we repeatedly do. Excellence, then, is not an act, but a habit"', '"One run can change your day. Many runs can change your life"', '"The miracle isn’t that I finished. The miracle is that I had the courage to start"'];
@@ -29,27 +31,28 @@ document.getElementById("button").addEventListener("click", function (event) {
 
     // if user enters a comma
     const cityIncludes = city.includes(",");
-    console.log (cityIncludes);
+    console.log(cityIncludes);
 
     // alert "can't use comma"
     if (cityIncludes) {
-        alert ("Please only type the city. Try again");
-        
+        alert("Please only type the city. Try again");
+
     }
 
     // if user doesn't enter a comma run functions
     else {
-    document.getElementById("weatherDiv").style.display = "block";
-    document.getElementById("motivationalQuote").style.display = "block";
-    document.getElementById("beerDiv").style.display = "block";
-    document.getElementById("form").innerHTML = "";
-    document.getElementById("slogan").innerHTML = "";
+        document.getElementById("weatherDiv").style.display = "block";
+        document.getElementById("motivationalQuote").style.display = "block";
+        document.getElementById("beerDiv").style.display = "block";
+        document.getElementById("form").innerHTML = "";
+        document.getElementById("slogan").innerHTML = "";
 
         if (offset === 0) {
             getMusic();
             getQuotes();
             getweather();
-            moveButton();
+            musicButton();
+            beerButton();
             getBeer();
         }
         else {
@@ -71,9 +74,9 @@ document.getElementById("button").addEventListener("click", function (event) {
         quoteDiv.innerHTML = quotes[0];
 
         //function to cycle through the quotes in the array without repeating the quote twice in a row
-        setInterval(function() {
+        setInterval(function () {
             quoteDiv.innerHTML = quotes[counter++ % quotes.length];
-          }, 8000)
+        }, 8000)
     }
 
 
@@ -149,38 +152,46 @@ document.getElementById("button").addEventListener("click", function (event) {
 
 
 
-    function moveButton() {
-        let newButton = document.createElement("button");
-        newButton.classList.add("newButton");
-        newButton.innerHTML = "Grab More Music";
-        newButton.addEventListener("click", getMusic);
-        document.getElementById("newButton").append(newButton);
+    function musicButton() {
+        let newMusicButton = document.createElement("button");
+        newMusicButton.classList.add("newButton");
+        newMusicButton.innerHTML = "Grab More Music";
+        newMusicButton.addEventListener("click", getMusic);
+        document.getElementById("musicButton").append(newMusicButton);
     }
-
-
 
 
     // Beer funtion
     function getBeer() {
 
-        let getBeerURL = "https://api.openbrewerydb.org/breweries?page=5&per_page=5&by_city=" + city;
+        let getBeerURL = "https://api.openbrewerydb.org/breweries?per_page=" + beerPerPage + "&page=" + page + "&by_city=" + city;
         axios.get(getBeerURL).then(function (response) {
 
             let beerData = response.data;
             let beerList = [];
             console.log(beerData);
 
+            page++;
+
             for (i = 0; i < beerData.length; i++) {
                 let breweryName = response.data[i].name;
                 let breweryAddress = response.data[i].street;
                 let breweryWebsite = response.data[i].website_url;
-               
+
 
                 let breweryInfo = "<div class='breweryInfo'><h2>" + breweryName + "</h2>" + breweryAddress + "<br> <a class='breweryWebsite' href=" + breweryWebsite + ">www. " + breweryName + " .com </a><br><hr></div>";
                 beerList.push(breweryInfo)
             }
-            const beerTitle = "<p id='beerTitle'>Breweries you can run to</p><br><hr>";
+            const beerTitle = "<p id='beerTitle'>Breweries Near You</p><br><hr>";
             document.getElementById("beerDiv").innerHTML = beerTitle + beerList.join(" ");
         })
+    }
+
+    function beerButton() {
+        let newBeerButton = document.createElement("button");
+        newBeerButton.classList.add("newButton");
+        newBeerButton.innerHTML = "Grab More Beer";
+        newBeerButton.addEventListener("click", getBeer);
+        document.getElementById("beerButton").append(newBeerButton);
     }
 })
