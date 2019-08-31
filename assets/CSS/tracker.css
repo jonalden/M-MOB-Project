@@ -23,6 +23,11 @@ body {
     position: relative;
 }
 
+h2 {
+    color: white;
+    margin-top: 90px;
+}
+
 /* text on the logo, "Be4" */
 
 #imageText {
