@@ -163,7 +163,7 @@ document.getElementById("button").addEventListener("click", function (event) {
     // Beer funtion
     function getBeer() {
 
-        let getBeerURL = "https://api.openbrewerydb.org/breweries?page=5&per_page=5&by_city=" + city;
+        let getBeerURL = "https://api.openbrewerydb.org/breweries?per_page=5&by_city=" + city;
         axios.get(getBeerURL).then(function (response) {
 
             let beerData = response.data;
