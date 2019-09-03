@@ -288,6 +288,7 @@ td {
 #beerDiv {
     display: none;
     margin-top: 300px;
+    margin-bottom: 40px;
     background: rgba(218, 15, 218, 0.8);
     padding: 20px;
     border-radius: 8px;
