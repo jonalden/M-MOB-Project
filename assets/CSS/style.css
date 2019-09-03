@@ -330,3 +330,122 @@ h4 {
     margin-bottom: 0px !important;
     padding-bottom: 0px !important;
 }
+
+/* Responsive Design
+
+* Width at 980px and below */
+@media screen and (max-width: 980px) {
+    #logo{
+          margin-left: 20px;
+          color: #ffffff;
+          background: #000000;
+          float: left;
+      }
+    .main-section {
+      max-width: 550px;
+      margin-left: 20px;
+      color: #000000;
+      background: #ffffff;
+    }
+    /* .sidebar{
+        margin-right: 20px;
+    } */
+    
+    nav {
+      
+      margin-right: 25px;
+      overflow: hidden;
+    }
+    
+    h1 {
+    
+      color: #000000;
+    }
+    
+    footer {
+    
+      border-top: 8px solid #000000;
+    }
+    
+    }
+    
+    
+    /* Width at 768px and below */
+    @media screen and (max-width: 768px) {
+    #logo{
+          /* margin-left: 20px; */
+          /* float: left; */
+      }
+    .main-section {
+      max-width: 710px;
+      margin-left: 20px;
+    }
+    .sidebar{
+        margin-right: 20px;
+        max-width: 710px;
+    }
+    
+    body {
+      /* background: none;
+    } */
+    
+    nav {
+      
+      margin-right: 25px;
+      float: right;
+    }
+    
+    }
+    /* Width at 640px and below */
+    @media screen and (max-width: 640px) {
+    #logo{
+          margin-left: 20px;
+          width: 600px;
+          text-align: left;
+          
+      }
+    .main-section {
+      max-width: 710px;
+      margin-left: 20px;
+    }
+    .sidebar{
+        margin-right: 20px;
+        max-width: 710px;
+    }
+    
+    /* body {
+      background: none;
+    } */
+    
+    nav {
+      margin-right: 190px;
+      float: right;
+    }
+    
+    }
+    
+    @media only screen and (max-width : 640px) {
+      
+      header {
+          position: absolute;
+          box-shadow: 0 0 5px #000;
+      }
+      
+      /* body {
+        background: none;
+      }
+       */
+      nav li {
+          text-align: center;
+          width: 100%;
+          padding: 5px 0;
+          margin: 0;
+      }
+    
+      .navi {
+          width: 100%;
+          text-align: center;
+          margin: 0 auto;
+      }
+
+    }
