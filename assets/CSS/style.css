@@ -202,7 +202,7 @@ body {
     transition: all 0.3s ease 0s;
 }
 
-/* buttin added to the bottom of the music options */
+/* button added to the bottom of the music options */
 
 #newButton {
     text-align: center;
@@ -344,50 +344,6 @@ h4 {
 /* Width at 980px and below */
 
 @media screen and (max-width: 980px) {
-    #logo {
-        margin-left: 20px;
-        color: #ffffff;
-        background: #000000;
-        float: left;
-    }
-
-    .main-section {
-        max-width: 550px;
-        margin-left: 20px;
-        color: #000000;
-        background: #ffffff;
-    }
-
-    nav {
-        margin-right: 25px;
-        overflow: hidden;
-    }
-
-    h1 {
-        color: #000000;
-    }
-
-    footer {
-        border-top: 8px solid #000000;
-    }
-}
-
-/* Width at 768px and below */
-
-@media screen and (max-width: 768px) {
-    #slogan {
-        text-align: center;
-        color: white;
-        font-size: 16px;
-        width: 60%;
-        margin: 100px auto 80px;
-    }
-}
-
-/* Width at 640px and below */
-
-@media only screen and (max-width : 640px) {
-
     #slogan {
         text-align: center;
         color: white;
@@ -424,5 +380,99 @@ h4 {
     
         animation: change_opacity 4s infinite alternate;
     }
+}
 
+/* Width at 768px and below */
+
+@media screen and (max-width: 768px) {
+    #slogan {
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        width: 60%;
+        margin: 100px auto 80px;
+    }
+
+    #imageText {
+        position: absolute;
+        bottom: 0%;
+        left: 40%;
+        color: white;
+        font-size: 20px;
+        font-family: 'Rock Salt', cursive;
+    }
+
+    #trackLink {
+        position: absolute;
+        top: 60%;
+        right: 150px;
+        color: white;
+        font-size: 12px;
+        transition: all 0.5s ease 0s;
+    }
+
+    #motivationalQuote {
+        display: none;
+        text-align: center;
+        color: white;
+        font-size: 10px;
+        margin: 200px auto;
+        height: 300px;
+    
+        animation: change_opacity 4s infinite alternate;
+    }
+}
+
+/* Width at 640px and below */
+
+@media only screen and (max-width : 640px) {
+
+    #header {
+        background: rgb(211, 211, 211, 0.4) !important;
+        padding: 10px !important;
+        text-align: center;
+        position: relative;
+    }
+    
+    #imageContainer {
+        position: relative;
+    }
+    
+    #slogan {
+        text-align: center;
+        /* color: white; */
+        font-size: 16px;
+        width: 60%;
+        margin: 100px auto 80px;
+    }
+
+    #imageText {
+        position: absolute;
+        bottom: 0%;
+        left: auto;
+        /* color: white; */
+        font-size: 20px;
+        /* font-family: 'Rock Salt', cursive; */
+    }
+
+    #trackLink {
+        position: relative;
+        top: 10%;
+        right: auto;
+        /* color: white; */
+        font-size: 12px;
+        transition: all 0.5s ease 0s;
+        align-content: center;
+    }
+
+    #motivationalQuote {
+        display: none;
+        text-align: center;
+        /* color: white; */
+        font-size: 10px;
+        /* margin: 200px auto; */
+        /* height: 300px; */
+    
+        animation: change_opacity 4s infinite alternate;
+    }
 }
