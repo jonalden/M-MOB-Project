@@ -339,9 +339,10 @@ h4 {
     padding-bottom: 0px !important;
 }
 
-/* Responsive Design
+/* Responsive Design */
 
-* Width at 980px and below */
+/* Width at 980px and below */
+
 @media screen and (max-width: 980px) {
     #logo {
         margin-left: 20px;
@@ -357,27 +358,22 @@ h4 {
         background: #ffffff;
     }
 
-
     nav {
-
         margin-right: 25px;
         overflow: hidden;
     }
 
     h1 {
-
         color: #000000;
     }
 
     footer {
-
         border-top: 8px solid #000000;
     }
-
 }
 
-
 /* Width at 768px and below */
+
 @media screen and (max-width: 768px) {
     #slogan {
         text-align: center;
@@ -386,20 +382,9 @@ h4 {
         width: 60%;
         margin: 100px auto 80px;
     }
-
 }
 
 /* Width at 640px and below */
-@media screen and (max-width: 640px) {
-    #slogan {
-        text-align: center;
-        color: white;
-        font-size: 16px;
-        width: 60%;
-        margin: 100px auto 80px;
-    }
-
-}
 
 @media only screen and (max-width : 640px) {
 
@@ -410,8 +395,6 @@ h4 {
         width: 60%;
         margin: 100px auto 80px;
     }
-
-    /* text on the logo, "Be4" */
 
     #imageText {
         position: absolute;
@@ -429,6 +412,17 @@ h4 {
         color: white;
         font-size: 12px;
         transition: all 0.5s ease 0s;
+    }
+
+    #motivationalQuote {
+        display: none;
+        text-align: center;
+        color: white;
+        font-size: 10px;
+        margin: 200px auto;
+        height: 300px;
+    
+        animation: change_opacity 4s infinite alternate;
     }
 
 }
