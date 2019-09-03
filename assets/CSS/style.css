@@ -343,7 +343,7 @@ h4 {
 
 /* Width at 980px and below */
 
-@media screen and (max-width: 980px) {
+/* @media screen and (max-width: 980px) {
     #slogan {
         text-align: center;
         color: white;
@@ -380,12 +380,12 @@ h4 {
     
         animation: change_opacity 4s infinite alternate;
     }
-}
+} */
 
 /* Width at 768px and below */
 
 @media screen and (max-width: 768px) {
-    #slogan {
+    /* #slogan {
         text-align: center;
         color: white;
         font-size: 16px;
@@ -420,7 +420,7 @@ h4 {
         height: 300px;
     
         animation: change_opacity 4s infinite alternate;
-    }
+    } */
 }
 
 /* Width at 640px and below */
@@ -429,7 +429,7 @@ h4 {
 
     #header {
         background: rgb(211, 211, 211, 0.4) !important;
-        padding: 10px !important;
+        padding: 20px !important;
         text-align: center;
         position: relative;
     }
@@ -440,7 +440,6 @@ h4 {
     
     #slogan {
         text-align: center;
-        /* color: white; */
         font-size: 16px;
         width: 60%;
         margin: 100px auto 80px;
@@ -450,16 +449,13 @@ h4 {
         position: absolute;
         bottom: 0%;
         left: auto;
-        /* color: white; */
         font-size: 20px;
-        /* font-family: 'Rock Salt', cursive; */
     }
 
     #trackLink {
         position: relative;
         top: 10%;
         right: auto;
-        /* color: white; */
         font-size: 12px;
         transition: all 0.5s ease 0s;
         align-content: center;
@@ -468,11 +464,7 @@ h4 {
     #motivationalQuote {
         display: none;
         text-align: center;
-        /* color: white; */
         font-size: 10px;
-        /* margin: 200px auto; */
-        /* height: 300px; */
-    
         animation: change_opacity 4s infinite alternate;
     }
 }
