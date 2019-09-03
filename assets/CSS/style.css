@@ -385,10 +385,6 @@ h4 {
         max-width: 710px;
     }
     
-    body {
-      /* background: none;
-    } */
-    
     nav {
       
       margin-right: 25px;
@@ -413,10 +409,6 @@ h4 {
         max-width: 710px;
     }
     
-    /* body {
-      background: none;
-    } */
-    
     nav {
       margin-right: 190px;
       float: right;
@@ -431,10 +423,6 @@ h4 {
           box-shadow: 0 0 5px #000;
       }
       
-      /* body {
-        background: none;
-      }
-       */
       nav li {
           text-align: center;
           width: 100%;
